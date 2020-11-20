@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container pt-5 pb-5">
+        <h2 class="text-success"><i class="fa fa-plus"></i> Add Drinks</h1>
+        <form method="POST">
+            <input type="hidden" name="add">
+            <div class="row">
+                <div class="col">
+                    <label>Drink Name</label>
+                    <input name="name" type="text" placeholder="Ex: Tea" class="form-control mb-3" required>
+                </div>
+                <div class="col">
+                    <label>Drink Price</label>
+                    <input name="price" type="number" min="1" placeholder="Ex: 11 L.E" class="form-control mb-3" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <button class="btn btn-success">
+                        <i class="fa fa-plus"></i> Add
+                    </button>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <h2 class="text-primary"><i class="fa fa-coffee"></i> Drinks List</h2>
+        <table class="table table-bordered">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                                    <tr>
+                        <td>1</td>
+                        <td>Tea</td>
+                        <td>5</td>
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="1">
+                                <input type="hidden" name="delete">
+                                <button class="btn btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+                            <a class="btn btn-warning" href="?edit=1">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>2</td>
+                        <td>Coffee</td>
+                        <td>15</td>
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="2">
+                                <input type="hidden" name="delete">
+                                <button class="btn btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+                            <a class="btn btn-warning" href="?edit=2">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>3</td>
+                        <td>Mangoo</td>
+                        <td>30</td>
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="3">
+                                <input type="hidden" name="delete">
+                                <button class="btn btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+                            <a class="btn btn-warning" href="?edit=3">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>4</td>
+                        <td>Lemon</td>
+                        <td>20</td>
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="4">
+                                <input type="hidden" name="delete">
+                                <button class="btn btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+                            <a class="btn btn-warning" href="?edit=4">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                            </tbody>
+        </table>
+        
+        
+        <hr>
+        
+        <h2 class="text-success"><i class="fa fa-plus"></i> Add Order</h1>
+        <form method="POST">
+                    <input type="hidden" name="addDrinksToTables">
+                    <div class="row">
+                        <div class="col">
+                            <label>Table Number</label>
+                            <select class="custom-select">
+                                                        <option value="1"> 1 </option>
+                                                        <option value="2"> 2 </option>
+                                                        <option value="3"> 3 </option>
+                                                        <option value="4"> 4 </option>
+                                                        <option value="5"> 5 </option>
+                                                        <option value="6"> 6 </option>
+                                                        <option value="7"> 7 </option>
+                                                        <option value="8"> 8 </option>
+                                                        <option value="9"> 9 </option>
+                                                        </select>
+                            </div>
+
+                        <div class="col">
+                            <label>Drink Name</label>
+                            <select name="DrinkName" id="" class="custom-select">
+                                                                                    <option value="1" >Tea </option>
+                            
+                                                        <option value="2" >Coffee </option>
+                            
+                                                        <option value="3" >Mangoo </option>
+                            
+                                                        <option value="4" >Lemon </option>
+                            
+                                                        </select>
+                             </div>
+                        </div>
+                    <hr>
+                        <div class="row">
+                        <div class="col text-center">
+                            <button class="btn btn-success">
+                         <i class="fa fa-plus"></i> Add
+                            </button>
+                        </div>
+                        </div>
+
+                </form>
+                <hr>
+
+                
+                <h2><i class="fa fa-table"></i> Display Tables</h2>
+        <table class = "table table-bordered"> 
+        <thead>
+        <th>Table Number </th>
+        <th>Drinks Name </th>
+        <th> Price </th>
+        <th>Action </th>
+        </thead>
+        <tbody> 
+                <tr>
+        <td>1</td>
+        <td>Coffee</td>
+        <td>15</td>        
+        <td>
+        <form method="POST" style="display:inline">
+            <input type="hidden" name="id" value="<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>210</b><br />
+">
+            <input type="hidden" name="delete_table">
+            <button class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+            </button>
+        </form>
+        <a class="btn btn-warning" href="?edit=<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>216</b><br />
+">
+            <i class="fa fa-edit"></i>
+        </a>
+        <input type="hidden" name="CalculateTable">
+            <button class="btn btn-calculate">
+                <i class="fa fa-calculator"></i>
+            </button>
+    </td>
+        </tr>
+                <tr>
+        <td>1</td>
+        <td>Lemon</td>
+        <td>20</td>        
+        <td>
+        <form method="POST" style="display:inline">
+            <input type="hidden" name="id" value="<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>210</b><br />
+">
+            <input type="hidden" name="delete_table">
+            <button class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+            </button>
+        </form>
+        <a class="btn btn-warning" href="?edit=<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>216</b><br />
+">
+            <i class="fa fa-edit"></i>
+        </a>
+        <input type="hidden" name="CalculateTable">
+            <button class="btn btn-calculate">
+                <i class="fa fa-calculator"></i>
+            </button>
+    </td>
+        </tr>
+                <tr>
+        <td>1</td>
+        <td>Tea</td>
+        <td>5</td>        
+        <td>
+        <form method="POST" style="display:inline">
+            <input type="hidden" name="id" value="<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>210</b><br />
+">
+            <input type="hidden" name="delete_table">
+            <button class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+            </button>
+        </form>
+        <a class="btn btn-warning" href="?edit=<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>216</b><br />
+">
+            <i class="fa fa-edit"></i>
+        </a>
+        <input type="hidden" name="CalculateTable">
+            <button class="btn btn-calculate">
+                <i class="fa fa-calculator"></i>
+            </button>
+    </td>
+        </tr>
+                <tr>
+        <td>2</td>
+        <td>Mangoo</td>
+        <td>30</td>        
+        <td>
+        <form method="POST" style="display:inline">
+            <input type="hidden" name="id" value="<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>210</b><br />
+">
+            <input type="hidden" name="delete_table">
+            <button class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+            </button>
+        </form>
+        <a class="btn btn-warning" href="?edit=<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>216</b><br />
+">
+            <i class="fa fa-edit"></i>
+        </a>
+        <input type="hidden" name="CalculateTable">
+            <button class="btn btn-calculate">
+                <i class="fa fa-calculator"></i>
+            </button>
+    </td>
+        </tr>
+                <tr>
+        <td>2</td>
+        <td>Mangoo</td>
+        <td>30</td>        
+        <td>
+        <form method="POST" style="display:inline">
+            <input type="hidden" name="id" value="<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>210</b><br />
+">
+            <input type="hidden" name="delete_table">
+            <button class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+            </button>
+        </form>
+        <a class="btn btn-warning" href="?edit=<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>216</b><br />
+">
+            <i class="fa fa-edit"></i>
+        </a>
+        <input type="hidden" name="CalculateTable">
+            <button class="btn btn-calculate">
+                <i class="fa fa-calculator"></i>
+            </button>
+    </td>
+        </tr>
+                <tr>
+        <td>3</td>
+        <td>Lemon</td>
+        <td>20</td>        
+        <td>
+        <form method="POST" style="display:inline">
+            <input type="hidden" name="id" value="<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>210</b><br />
+">
+            <input type="hidden" name="delete_table">
+            <button class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+            </button>
+        </form>
+        <a class="btn btn-warning" href="?edit=<br />
+<b>Notice</b>:  Undefined index: id in <b>C:\Users\Khiter\Desktop\phpdesktop-chrome-57.0-rc-php-7.1.3\phpdesktop-chrome-57.0-rc-php-7.1.3\www\index.php</b> on line <b>216</b><br />
+">
+            <i class="fa fa-edit"></i>
+        </a>
+        <input type="hidden" name="CalculateTable">
+            <button class="btn btn-calculate">
+                <i class="fa fa-calculator"></i>
+            </button>
+    </td>
+        </tr>
+                </tbody>
+        </table>
+
+        <hr>
+                <h2 class="text-primary"><i class="fa fa-coffee"></i> Display prices of tables</h2>
+        <table class="table table-bordered">
+            <thead>
+                <th>Table number</th>
+                <th>Total Price of table </th>
+            </thead>
+            <tbody>
+                                    <tr>
+                        <td>1</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="1">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>2</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="2">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>3</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="3">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>4</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="4">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>5</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="5">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>6</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="6">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>7</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="7">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>8</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="8">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td>9</td>
+
+                        <td>
+                            <form method="POST" style="display:inline">
+                                <input type="hidden" name="id" value="9">
+                                <input type="hidden" name="Result">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-calculator"></i>
+                                </button>
+                            </form>  
+                        </td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+</body>
+</html>
